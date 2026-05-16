@@ -1,0 +1,15 @@
+# Logs
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Edge driver (download separately)
+edgedriver/
+
+# Lock file
+.lock
+
+# User config (contains credentials)
+config.ini

@@ -1,0 +1,14 @@
+[credentials]
+USERNAME = your_student_id
+PASSWORD = your_password
+
+[email]
+EMAIL_SENDER = your_email@qq.com
+EMAIL_PASSWORD = your_qq_smtp_authorization_code
+EMAIL_RECEIVER = your_email@qq.com
+
+[browser]
+DRIVER_PATH = ./edgedriver/msedgedriver.exe
+
+[wifi]
+SSID = CUG
