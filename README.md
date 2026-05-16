@@ -104,15 +104,31 @@ python Login_CUG.py
 
 ### 定时任务（推荐）
 
-以管理员身份运行 `setup_task.bat`，会创建 Windows 任务计划，每 30 分钟自动检测一次网络。
+在文件资源管理器中找到 `setup_task.bat`，**右键 → 以管理员身份运行**。
 
-管理命令：
+运行后会弹出命令行窗口，显示创建结果：
+- 成功: `Task "CUG_AutoReconnect" created successfully!`
+- 失败: `Failed! Please run this script as Administrator.`（需要管理员权限）
 
-```bash
-# 查看任务
+> **注意**: 请从 Windows 文件资源管理器中右键运行，不要在 VS Code 终端或 Git Bash 中运行，否则输出会乱码（但不影响实际创建）。
+
+**验证任务是否创建成功：**
+
+按 `Win + R`，输入 `taskschd.msc` 打开任务计划程序，在任务列表中搜索 `CUG_AutoReconnect`，能看到就说明创建成功了。
+
+或者在命令提示符（cmd）中运行：
+
+```cmd
 schtasks /query /tn CUG_AutoReconnect
+```
 
-# 手动触发
+**管理定时任务：**
+
+```cmd
+# 查看任务详情
+schtasks /query /tn CUG_AutoReconnect /v /fo LIST
+
+# 手动触发一次（不等 30 分钟）
 schtasks /run /tn CUG_AutoReconnect
 
 # 删除任务
